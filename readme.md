@@ -1,5 +1,5 @@
 # Surge JavaScript 脚本说明
-## 【贴吧签到】[链接地址](https://raw.githubusercontent.com/IsSuperman/Surge-js/master/tieba.js)
+## 【贴吧签到】[代码](https://raw.githubusercontent.com/IsSuperman/Surge-js/master/tieba.js)
 1. 将脚本内容复制到本地。
 2. 下载【百度贴吧】iOS手机版。
 3. 使用Surge或Thor等抓包工具对【一键签到】抓包，得到Header和Body的内容，将内容填到脚本对应的地方。
