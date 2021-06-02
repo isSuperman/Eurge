@@ -1,0 +1,52 @@
+#!name=Patch Scripts
+#!desc=去广告 等功能 2021年6月2日
+
+[Script]
+
+> 微博去开屏广告
+微博开屏去广告 = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js,type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua)
+微博内去广告 = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js,type=http-response,pattern=^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list)
+
+> 知乎去feed广告
+知乎feed去广告 = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20feed.js,type=http-response,pattern=https://api.zhihu.com/moments/recommend
+知乎recommend去广告 = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20recommend.js,type=http-response,pattern=https://api.zhihu.com/topstory/recommend
+
+> 哔哩哔哩 精简&去广告
+哔哩哔哩首页tab去广告 = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20tab.js,type=http-response,pattern=https://app.bilibili.com/x/resource/show/tab\?access_key
+哔哩哔哩feed去广告 = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20feed.js,type=http-response,pattern=https://app.bilibili.com/x/v2/feed/index\?access_key
+
+> 网易蜗牛读书VIP (By yxiaocai and JO2EY)
+网易蜗牛读书VIP = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/wnyd.js,type=http-response,pattern=^https?:\/\/p\.du\.163\.com\/gain\/readtime\/info\.json
+
+> VSCO滤镜VIP
+vsco解锁VIP = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/vsco.js,type=http-response,pattern=^https?:\/\/vsco\.co\/api\/subscriptions\/2.1\/user-subscriptions\/
+
+> WPS (By eHpo)
+Wps解锁VIP = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js,type=http-response,pattern=^https://account.wps.*/api/users/
+
+> 扫描全能王 pro
+扫描全能王解锁Pro = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/CamScanner.js,type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?
+
+> VUE pro
+VUE解锁Pro = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/VUE.js,type=http-response,pattern=^https:\/\/api\.vuevideo\.net\/api\/v1\/(users\/.+\/profile|subtitle\/prepare)
+
+> PicsArt美易 pro
+PicsArt美易解锁Pro = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/PicsArt.js,type=http-response,pattern=^https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json
+
+> 轻颜相机 & ulike & 蒸汽波相机(vaporcam)三合一 解锁VIP(By @s y & Alex0510)
+轻颜相机解锁VIP = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/qyxj.js,type=http-response,pattern=^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info
+
+> 美颜相机一次性解锁内购（by黑黑酱）
+美颜相机解锁内购 = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/myxj.js,type=http-response,pattern=^https:\/\/api\.meiyan\.com\/iap\/verify\.json
+
+> draft
+draft解锁 = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Scripting/master/draft.js,script-update-interval=0,type=http-response,pattern=^https:\/\/backend\.getdrafts\.com\/api\/.*\/verification
+
+> Pdfexpert
+Pdfexpert解锁VIP = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Scripting/master/Pdfexpert.vip.js,script-update-interval=0,type=http-response,pattern=^https:\/\/license\.pdfexpert\.com\/api\/.+\/subscription\/(refresh$|check$)
+
+#Termius 
+http-response https:\/\/api\.termius\.com\/api\/v3\/bulk\/account\/ script-path=https://raw.githubusercontent.com/langkhach270389/Scripting/master/Terminus.js
+
+[MITM]
+hostname = %APPEND% -*.googlevideo.com, api.termius.com, api.meiyan.com, commerce-.*api.faceu.mobi, commerce-api.faceu.mobi, api.rr.tv, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, p.du.163.com, vsco.co, account.wps.*, ap*.intsig.net, api.vuevideo.net, api.picsart.c*, api.meiease.c*, api.meiease.c*, api-intl.mr.meitu.com, license.pdfexpert.com, ap*.intsig.net, backend.getdrafts.com, nomo.dafork.com
