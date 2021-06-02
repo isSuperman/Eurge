@@ -1,5 +1,5 @@
-#!name=tokjp
-#!desc=
+#!name=Tokjp
+#!desc=修复部分问题
 
 [URL REWRITE]
 (?<=_region=)CN(?=&) JP 307
