@@ -42,8 +42,12 @@ PicsArt美易解锁Pro = requires-body=1,script-path=https://raw.githubuserconte
 > draft
 draft解锁 = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Scripting/master/draft.js,script-update-interval=0,type=http-response,pattern=^https:\/\/backend\.getdrafts\.com\/api\/.*\/verification
 
-#Termius 
+> Termius 
 http-response https:\/\/api\.termius\.com\/api\/v3\/bulk\/account\/ script-path=https://raw.githubusercontent.com/langkhach270389/Scripting/master/Terminus.js
 
+> Emby
+type=http-response,script-path=https://raw.githubusercontent.com/isSuperman/Eurge/master/module/unlock_emby.js,pattern=^http(s?):\/\/(www\.|)mb3admin\.com\/.*$,max-size=131072,requires-body=true,timeout=10,debug=false,enable=true
+
+
 [MITM]
-hostname = %APPEND% -*.googlevideo.com, api.termius.com, api.meiyan.com, commerce-.*api.faceu.mobi, commerce-api.faceu.mobi, api.rr.tv, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, p.du.163.com, vsco.co, account.wps.*, ap*.intsig.net, api.vuevideo.net, api.picsart.c*, api.meiease.c*, api.meiease.c*, api-intl.mr.meitu.com, ap*.intsig.net, backend.getdrafts.com, nomo.dafork.com
+hostname = %APPEND% -*.googlevideo.com, mb3admin.com, api.termius.com, api.meiyan.com, commerce-.*api.faceu.mobi, commerce-api.faceu.mobi, api.rr.tv, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, p.du.163.com, vsco.co, account.wps.*, ap*.intsig.net, api.vuevideo.net, api.picsart.c*, api.meiease.c*, api.meiease.c*, api-intl.mr.meitu.com, ap*.intsig.net, backend.getdrafts.com, nomo.dafork.com
