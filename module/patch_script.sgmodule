@@ -46,7 +46,7 @@ draft解锁 = requires-body=1,max-size=0,script-path=https://raw.githubuserconte
 http-response https:\/\/api\.termius\.com\/api\/v3\/bulk\/account\/ script-path=https://raw.githubusercontent.com/langkhach270389/Scripting/master/Terminus.js
 
 > Emby
-type=http-response,script-path=https://raw.githubusercontent.com/isSuperman/Eurge/master/module/unlock_emby.js,pattern=^http(s?):\/\/(www\.|)mb3admin\.com\/.*$,max-size=131072,requires-body=true,timeout=10,debug=false,enable=true
+http-response script-path=https://raw.githubusercontent.com/isSuperman/Eurge/master/module/unlock_emby.js pattern=^http(s?):\/\/(www\.|)mb3admin\.com\/.*$,max-size=131072 requires-body=true timeout=10 debug=false enable=true
 
 
 [MITM]
